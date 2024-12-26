@@ -10,6 +10,7 @@ import React from "react";
 import { styles } from "../assets/theme";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import { image185 } from "@/api/moviebd";
 var { width, height } = Dimensions.get("window");
 export default function MovieList({ title, data, hideSeeALl }) {
   let movieName = " Ant-man ";
@@ -44,14 +45,14 @@ export default function MovieList({ title, data, hideSeeALl }) {
             >
               <View className="space-y-1 mr-4">
                 <Image
-                  source={require("../assets/poster/avt.jpg")}
+                  source={{uri: image185(item.poster_path)}}
                   className="rounded-3xl"
                   style={{ width: width * 0.33, height: height * 0.22 }}
                 />
                 <Text className="text-white ml-1">
-                  {movieName.length > 14
-                    ? movieName.slice(0, 14) + "..."
-                    : movieName}
+                  {item.title.length > 14
+                    ? item.title.slice(0, 14) + "..."
+                    : item.title}
                 </Text>
               </View>
             </TouchableWithoutFeedback>

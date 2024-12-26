@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+constants/
 # Expo
 .expo/
 dist/
